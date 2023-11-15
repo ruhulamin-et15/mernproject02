@@ -1,0 +1,133 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+  .pnf {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .pnf{
+    min-height: 75vh;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .navbar{
+    background-color: rgb(78, 237, 15);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .pnf{
+    min-height: 75vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 150px;
+  }
+  .navbar{
+    background-color: rgb(95, 114, 240);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .pnf{
+    min-height: 75vh;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 150px;
+  }
+  .navbar{
+    background-color: rgb(240, 148, 43);
+  }
+}
+
+
+.navbar-brand{
+  font-weight: 900;
+}
+
+.nav-item{
+  margin: 2px;
+}
+
+.nav-item .active{
+  border-bottom: 2px solid black;
+  background-color: green;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.page{
+  min-height: 72vh;
+}
+
+.pnf-title{
+  font-size: 100px;
+  font-weight: 700;
+}
+
+
+
+.admin-panel{
+  background-color: rgb(225, 225, 203);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.admin-panel a{
+  background-color: white;
+  border-radius: 5px;
+  margin: 2px;
+  margin-bottom: 3px;
+  padding: 5px;
+  width: 95%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.admin-panel a:hover{
+  background-color: rgb(24, 35, 242);
+  color: white;
+}
+
+
+
+.product-link{
+  text-decoration: none !important;
+  color: black !important;
+  
+}
+
+
+
+
+.footer{
+  color: white;
+  padding: 25px;
+  background-color: #000000;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.footer a:hover{
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba ;
+}
+
