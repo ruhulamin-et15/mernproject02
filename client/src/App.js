@@ -24,6 +24,7 @@ import UserProfile from "./pages/user/UserProfile";
 import AdminProfile from "./pages/Admin/AdminProfile";
 import CartPage from "./pages/CartPage";
 import Orders from "./pages/user/Orders";
+import AdminOrders from "./pages/Admin/AdminOrders";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
 
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/profile" element={<AdminProfile />} />
+        <Route path="/admin/orders" element={<AdminOrders />} />
         <Route path="/manage-category" element={<ManageCategory />} />
         <Route
           path="/manage-category/update-category/:id"
