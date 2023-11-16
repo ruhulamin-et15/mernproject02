@@ -7,7 +7,7 @@ const AdminMenu = () => {
       <div className="admin-panel">
         <h5 className="text-center">Admin Panel</h5>
         <Link to="/admin/profile" className="item active">
-          Admin Profile
+          Edit Profile
         </Link>
         <Link to="/manage-category" className="item active">
           Manage Category
