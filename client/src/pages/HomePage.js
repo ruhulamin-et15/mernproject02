@@ -177,10 +177,10 @@ const HomePage = () => {
                           "cart",
                           JSON.stringify([...cart, p])
                         );
-                        toast.success("Item Added to Cart");
+                        toast.success("Item Added to cart");
                       }}
                     >
-                      Add to Cart
+                      ADD TO CART
                     </button>
                   </div>
                 </div>

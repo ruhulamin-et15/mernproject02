@@ -56,13 +56,14 @@ const ProductDetails = () => {
           <h5>Description: {product.description}</h5>
           <h5>Price: {product.price}</h5>
           <h5>Quantity: {product.quantity}</h5>
-          <button className="btn btn-secondary">Add To Cart</button>
         </div>
       </div>
-      <hr/>
+      <hr />
       <div className="row container">
         <h4>Similar Product</h4>
-        {relatedProducts.length <1 && (<p className="text-center">No similar products found</p>)}
+        {relatedProducts.length < 1 && (
+          <p className="text-center">No similar products found</p>
+        )}
         <div className="d-flex flex-wrap">
           {relatedProducts?.map((p) => (
             <div className="card m-2" style={{ width: "18rem" }}>

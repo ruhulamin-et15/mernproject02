@@ -3,9 +3,9 @@ import Layout from "../../components/layout/Layout";
 import { useAuth } from "../../context/auth";
 import axios from "axios";
 import toast from "react-hot-toast";
-import AdminMenu from "../../components/layout/AdminMenu";
+import AdminMenu from "./../../components/layout/AdminMenu";
 
-const AdminProfile = () => {
+const UserProfile = () => {
   //context
   const [auth, setAuth] = useAuth();
 
@@ -17,29 +17,29 @@ const AdminProfile = () => {
   const [address, setAddress] = useState("");
 
   //get user data
-  useEffect(()=>{
-    const {name, email, phone, address} = auth?.user || {}
-    setName(name)
-    setEmail(email)
-    setPassword("")
-    setPhone(phone)
-    setAddress(address)
-  },[auth?.user])
+  useEffect(() => {
+    const { name, email, phone, address } = auth?.user || {};
+    setName(name);
+    setEmail(email);
+    setPassword("");
+    setPhone(phone);
+    setAddress(address);
+  }, [auth?.user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.put(`/api/auth/profile`, {
+      const { data } = await axios.put(`/api/auth/profile`, {
         name,
         email,
         password,
         phone,
         address,
       });
-      if(data?.error){
-        toast.error(data?.error)
+      if (data?.error) {
+        toast.error(data?.error);
       } else {
-        setAuth({...auth, user:data?.updatedUser})
+        setAuth({ ...auth, user: data?.updatedUser });
         let ls = localStorage.getItem("auth");
         ls = JSON.parse(ls);
         ls.user = data?.updatedUser;
@@ -61,8 +61,9 @@ const AdminProfile = () => {
           <div className="col-sm-8">
             <div className="pnf">
               <form onSubmit={handleSubmit} className="bg-success p-2 rounded">
-                <h3 className="text-center">Admin Profile</h3>
-                <div className="mb-3">
+                <h3 className="text-center">Edit Profile</h3>
+                <div className="mb-1">
+                  <label htmlFor="name">Name:</label>
                   <input
                     type="text"
                     placeholder="Enter Name"
@@ -71,7 +72,8 @@ const AdminProfile = () => {
                     className="form-control"
                   />
                 </div>
-                <div className="mb-3">
+                <div className="mb-1">
+                  <label htmlFor="email">Email:</label>
                   <input
                     type="email"
                     placeholder="Enter Email"
@@ -81,17 +83,18 @@ const AdminProfile = () => {
                     disabled
                   />
                 </div>
-                <div className="mb-3">
+                <div className="mb-1">
+                  <label htmlFor="password">Password:</label>
                   <input
                     type="password"
                     placeholder="Enter Password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                     className="form-control"
-                  
                   />
                 </div>
-                <div className="mb-3">
+                <div className="mb-1">
+                  <label htmlFor="phone">Phone:</label>
                   <input
                     type="tel"
                     placeholder="Enter Phone"
@@ -101,6 +104,7 @@ const AdminProfile = () => {
                   />
                 </div>
                 <div className="mb-3">
+                  <label htmlFor="address">Address:</label>
                   <input
                     type="text"
                     placeholder="Enter Address"
@@ -110,7 +114,7 @@ const AdminProfile = () => {
                   />
                 </div>
                 <button type="submit" className="btn btn-primary form-control">
-                  Update
+                  Update Profile
                 </button>
               </form>
             </div>
@@ -121,4 +125,4 @@ const AdminProfile = () => {
   );
 };
 
-export default AdminProfile;
+export default UserProfile;

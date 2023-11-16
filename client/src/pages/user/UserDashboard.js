@@ -1,20 +1,46 @@
 import React from "react";
-import { useAuth } from "../../context/auth";
 import Layout from "../../components/layout/Layout";
 import UserMenu from "../../components/layout/UserMenu";
+import { useAuth } from "../../context/auth";
+import { Link } from "react-router-dom";
 
 const UserDashboard = () => {
+  //context
   const [auth] = useAuth();
+
   return (
-    <Layout title={"Best offers - ecommerce app"}>
-      <div className="container-fluid m-3 p-3">
+    <Layout title={"Your Profile"}>
+      <div className="container-fluid m-2 p-2">
         <div className="row">
           <div className="col-sm-4">
             <UserMenu />
           </div>
           <div className="col-sm-8">
-            <h2 className="text-center">User Dashboard</h2>
-            <pre>{JSON.stringify(auth, null, 4)}</pre>
+            <div className="pnf">
+              <form className="bg-success p-2 rounded">
+                <h3 className="text-center">Your Profile</h3>
+                <div className="mb-3">
+                  <h4 className="text-white ">Name: {auth?.user?.name}</h4>
+                </div>
+                <div className="mb-3">
+                  <h4 className="text-white ">Email: {auth?.user?.email}</h4>
+                </div>
+                <div className="mb-3">
+                  <h4 className="text-white ">Phone: {auth?.user?.phone}</h4>
+                </div>
+                <div className="mb-3">
+                  <h4 className="text-white ">
+                    Address: {auth?.user?.address}
+                  </h4>
+                </div>
+                <Link
+                  to="/user/profile"
+                  className="btn btn-primary form-control"
+                >
+                  Click Here to Edit Your Profile
+                </Link>
+              </form>
+            </div>
           </div>
         </div>
       </div>
