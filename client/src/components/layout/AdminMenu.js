@@ -18,6 +18,9 @@ const AdminMenu = () => {
         <Link to="/manage-products" className="item">
           Manage Product
         </Link>
+        <Link to="/admin/orders" className="item">
+          Orders
+        </Link>
         <Link to="/users" className="item">
           Users
         </Link>
