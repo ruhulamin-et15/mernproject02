@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoute.js";
 import productRoutes from "./routes/productRoute.js";
+import path from "path";
 
 //configure env
 dotenv.config();
@@ -21,6 +22,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 //routes
 app.use("/api/auth", authRoutes);
@@ -28,8 +30,8 @@ app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
 
 //rest api
-app.get("/", (req, res) => {
-  res.send("<h2>welcome to ecommerce app MERN STACK Project 02</h2>");
+app.use("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 //PORT
