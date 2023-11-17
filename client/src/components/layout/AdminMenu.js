@@ -21,9 +21,6 @@ const AdminMenu = () => {
         <Link to="/admin/orders" className="item">
           Orders
         </Link>
-        <Link to="/users" className="item">
-          Users
-        </Link>
       </div>
     </>
   );

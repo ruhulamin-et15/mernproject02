@@ -109,7 +109,7 @@ const CartPage = () => {
                   </div>
                   <div className="col-md-5">
                     <p>Name: {p.name}</p>
-                    <p>Desc: {p.description.substring(0, 30)}</p>
+                    <p>Desc: {p.description.substring(0, 35)}....</p>
                     <p>Price: {p.price}</p>
                     <button
                       className="btn btn-danger"

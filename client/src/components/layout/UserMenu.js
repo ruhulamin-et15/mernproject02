@@ -9,14 +9,11 @@ const UserMenu = () => {
         <Link to="/user/profile" className="item">
           Edit Profile
         </Link>
-        <Link to="/user/verify" className="item">
-          Verify Phone
-        </Link>
         <Link to="/user/orders" className="item">
           Your Orders
         </Link>
-        <Link to="/user/orders" className="item">
-          Your Products
+        <Link to="/" className="item">
+          Main Menu
         </Link>
       </div>
     </>

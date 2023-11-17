@@ -8,17 +8,17 @@ import { Select } from "antd";
 const { Option } = Select;
 
 const AdminOrders = () => {
-  const [status, setStatus] = useState([
+  const [status] = useState([
     "Not Proccess",
     "Processing",
     "Shipped",
     "Delivered",
     "Cancel",
   ]);
-  const [changeStatus, setChangeStatus] = useState("");
+  // const [changeStatus, setChangeStatus] = useState("");
 
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
 
   const getOrders = async () => {
     try {

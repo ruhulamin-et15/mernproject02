@@ -37,6 +37,8 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
   res.status(200).send({ ok: true });
 });
 
+// get all users || get
+
 //update profile || put
 router.put("/profile", requireSignIn, updateProfileController);
 
