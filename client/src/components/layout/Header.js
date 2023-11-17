@@ -32,7 +32,7 @@ function Header() {
           <Container fluid>
             <Navbar className="navbar-brand">
               <Link to="/" className=" text-decoration-none text-black">
-                DARAZ BD
+                ECOMMERCE BD
               </Link>
             </Navbar>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
