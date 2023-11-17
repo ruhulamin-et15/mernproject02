@@ -1,5 +1,5 @@
 import express from "express";
-import { requireSignIn } from "../middlewares/authMiddleware.js";
+import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 import {
   createProductController,
   getProductsController,
@@ -21,7 +21,13 @@ const router = express.Router();
 
 //routes
 //create product
-router.post("/create-product", formidable(), createProductController);
+router.post(
+  "/create-product",
+  formidable(),
+  requireSignIn,
+  isAdmin,
+  createProductController
+);
 
 //get all products
 router.get("/get-products", getProductsController);
@@ -37,11 +43,17 @@ router.put(
   "/update-product/:pid",
   formidable(),
   requireSignIn,
+  isAdmin,
   updateProductController
 );
 
 //delete product
-router.delete("/delete-product/:pid", requireSignIn, deleteProductController);
+router.delete(
+  "/delete-product/:pid",
+  requireSignIn,
+  isAdmin,
+  deleteProductController
+);
 
 //filter product
 router.post("/product-filters", productFilterController);
@@ -57,6 +69,8 @@ router.get("/search/:keyword", searchProductController);
 
 //similar product
 router.get("/related-product/:pid/:cid", relatedProductController);
+
+// get all product by category
 
 //payments route
 //token

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout/Layout";
 import axios from "axios";
-import { Checkbox, Radio } from "antd";
+import { Carousel, Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/cart";
@@ -107,9 +107,56 @@ const HomePage = () => {
     setChecked(all);
   };
 
+  const contentStyle = {
+    height: "300px",
+    color: "#fff",
+    lineHeight: "300px",
+    textAlign: "center",
+    background: "#364d79",
+  };
+
   return (
     <Layout title={"All Products - Best offers"}>
       <div className="container-fluid p-1">
+        <Carousel autoplay>
+          <div>
+            <h3 style={contentStyle}>
+              <img
+                src="/images/voucher.jpg"
+                style={{ height: "300px" }}
+                className="w-100"
+              />
+            </h3>
+          </div>
+          <div>
+            <h3 style={contentStyle}>
+              <img
+                src="/images/baby.jpg"
+                style={{ height: "300px" }}
+                className="w-100"
+              />
+            </h3>
+          </div>
+          <div>
+            <h3 style={contentStyle}>
+              <img
+                src="/images/payment.jpg"
+                style={{ height: "300px" }}
+                className="w-100"
+              />
+            </h3>
+          </div>
+          <div>
+            <h3 style={contentStyle}>
+              <img
+                src="/images/ride.jpg"
+                style={{ height: "300px" }}
+                className="w-100"
+              />
+            </h3>
+          </div>
+        </Carousel>
+
         <div className="row mt-3">
           <div className="col-sm-2">
             <h6 className="text-center">Filter By Category</h6>
@@ -157,7 +204,7 @@ const HomePage = () => {
                   <div className="card-body">
                     <h5 className="card-title">Name: {p.name}</h5>
                     <p className="card-text">
-                      {p.description.substring(0, 35)}...
+                      {p.description.substring(0, 50)}...
                     </p>
                     <h6 className="card-text">
                       Price:

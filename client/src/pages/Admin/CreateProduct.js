@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout/Layout";
-import AdminMenu from "../../components/layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import AdminMenu from "../../components/layout/AdminMenu";
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -34,21 +34,21 @@ const CreateProduct = () => {
   //   getAllCategory();
   // }, []);
 
-    //get all categories
-    const getAllCategory = async () => {
-      try {
-        const { data } = await axios.get("api/category/get-category");
-        if (data?.success) {
-          setCategories(data?.category);
-        }
-      } catch (error) {
-        console.log(error);
+  //get all categories
+  const getAllCategory = async () => {
+    try {
+      const { data } = await axios.get("api/category/get-category");
+      if (data?.success) {
+        setCategories(data?.category);
       }
-    };
-  
-    useEffect(() => {
-      getAllCategory();
-    }, []);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllCategory();
+  }, []);
 
   //create product
   const handleCreate = async (e) => {

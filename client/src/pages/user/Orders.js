@@ -69,7 +69,7 @@ const Orders = () => {
                         </div>
                         <div className="col-md-5">
                           <p>Name: {p.name}</p>
-                          <p>Desc: {p.description.substring(0, 30)}</p>
+                          <p>Desc: {p.description.substring(0, 30)}....</p>
                           <p>Price: {p.price}</p>
                         </div>
                       </div>

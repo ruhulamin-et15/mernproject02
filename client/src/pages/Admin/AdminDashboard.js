@@ -17,7 +17,7 @@ const UserDashboard = () => {
           </div>
           <div className="col-sm-8">
             <div className="pnf">
-              <form className="bg-success p-2 rounded">
+              <form className="bg-secondary p-2 rounded">
                 <h3 className="text-center">Your Profile</h3>
                 <div className="mb-3">
                   <h4 className="text-white ">Name: {auth?.user?.name}</h4>
